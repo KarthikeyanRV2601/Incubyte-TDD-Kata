@@ -7,7 +7,7 @@ export function add(numbers: string): number {
 
     //Now we are handling the comma seperated numbers
     return numbers
-        .split(",")
+        .split(/,|\n/)
         .map(Number)
         .reduce((sum, num) => sum + num, 0);
 }
