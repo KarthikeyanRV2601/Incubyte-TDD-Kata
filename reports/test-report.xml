@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Jest Tests" tests="4" failures="0" errors="0" time="3.8">
-  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:36:35" time="2.349" tests="1">
+<testsuites name="Jest Tests" tests="5" failures="0" errors="0" time="3.803">
+  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:38:08" time="2.375" tests="1">
     <testcase classname="sample ui test pass" name="sample ui test pass" time="0.008">
     </testcase>
   </testsuite>
-  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:36:35" time="3.171" tests="3">
+  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:38:08" time="3.22" tests="4">
     <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.007">
     </testcase>
     <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0">
     </testcase>
     <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0">
     </testcase>
   </testsuite>
 </testsuites>
