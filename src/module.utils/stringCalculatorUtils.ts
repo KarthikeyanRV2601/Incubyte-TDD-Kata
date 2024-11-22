@@ -11,9 +11,13 @@ export function add(numbers: string): number {
         numbers = numbers.slice(delimiterMatch[0].length);
     }
 
-    console.log({ delimiterMatch, numbers, delimiter })
-    return numbers
-        .split(delimiter)
-        .map(Number)
-        .reduce((sum, num) => sum + num, 0);
+    //Now we are handling negative numbers
+    const numbersSplitted = numbers.split(delimiter).map(Number);
+    const negatives = numbersSplitted.filter(num => num < 0);
+
+    if (negatives.length) {
+        throw new Error(`Negative numbers not allowed: ${negatives.join(",")}`);
+    }
+
+    return numbersSplitted.reduce((sum, num) => sum + num, 0);
 }
