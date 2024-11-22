@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Jest Tests" tests="6" failures="0" errors="0" time="3.962">
-  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:41:09" time="2.479" tests="1">
+<testsuites name="Jest Tests" tests="7" failures="1" errors="0" time="3.943">
+  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:43:05" time="2.585" tests="1">
     <testcase classname="sample ui test pass" name="sample ui test pass" time="0.008">
     </testcase>
   </testsuite>
-  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:41:09" time="3.311" tests="5">
+  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="1" skipped="0" timestamp="2024-11-22T20:43:05" time="3.361" tests="6">
     <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.006">
     </testcase>
     <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0">
     </testcase>
     <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0">
     </testcase>
-    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0.001">
+    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0">
     </testcase>
     <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0">
+    </testcase>
+    <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 3
+Received: NaN
+    at Object.&lt;anonymous&gt; (E:\Incubyte_Assignment\incubyte-tdd-kata\src\modules.tests\utilsFunctionality.test.tsx:28:29)
+    at Promise.then.completed (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:121:9)
+    at run (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
     </testcase>
   </testsuite>
 </testsuites>
