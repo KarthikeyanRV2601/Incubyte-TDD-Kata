@@ -1,32 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Jest Tests" tests="3" failures="1" errors="0" time="3.697">
-  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:28:34" time="2.297" tests="1">
-    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.009">
+<testsuites name="Jest Tests" tests="3" failures="0" errors="0" time="3.724">
+  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:31:29" time="2.332" tests="1">
+    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.008">
     </testcase>
   </testsuite>
-  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="1" skipped="0" timestamp="2024-11-22T20:28:34" time="3.123" tests="2">
-    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.006">
+  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:31:29" time="3.137" tests="2">
+    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.007">
     </testcase>
-    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.002">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: 5
-Received: 0
-    at Object.&lt;anonymous&gt; (E:\Incubyte_Assignment\incubyte-tdd-kata\src\modules.tests\utilsFunctionality.test.tsx:12:26)
-    at Promise.then.completed (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\utils.js:298:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\utils.js:231:10)
-    at _callCircusTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:316:40)
-    at processTicksAndRejections (node:internal/process/task_queues:105:5)
-    at _runTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:252:3)
-    at _runTestsForDescribeBlock (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:126:9)
-    at _runTestsForDescribeBlock (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:121:9)
-    at run (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:71:3)
-    at runAndTransformResultsToJestFormat (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
-    at jestAdapter (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
-    at runTestInternal (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\runTest.js:367:16)
-    at runTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\runTest.js:444:34)
-    at Object.worker (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0">
     </testcase>
   </testsuite>
 </testsuites>
