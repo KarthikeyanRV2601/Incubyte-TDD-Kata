@@ -1,7 +1,8 @@
-import { add } from "../stringCalculator";
+import { add } from "../module.utils/stringCalculatorUtils";
 
 describe("String Calculator", () => {
   test("should return 0 for an empty string", () => {
-    expect(add("")).toBe(0);
+    const numbers = ""
+    expect(add(numbers)).toBe(0);
   });
 });

@@ -1,1 +1,84 @@
-{"numFailedTestSuites":2,"numFailedTests":0,"numPassedTestSuites":0,"numPassedTests":0,"numPendingTestSuites":0,"numPendingTests":0,"numRuntimeErrorTestSuites":2,"numTodoTests":0,"numTotalTestSuites":2,"numTotalTests":0,"openHandles":[],"snapshot":{"added":0,"didUpdate":false,"failure":false,"filesAdded":0,"filesRemoved":0,"filesRemovedList":[],"filesUnmatched":0,"filesUpdated":0,"matched":0,"total":0,"unchecked":0,"uncheckedKeysByFile":[],"unmatched":0,"updated":0},"startTime":1732306612453,"success":false,"testResults":[{"assertionResults":[],"coverage":{},"endTime":1732306616408,"message":"  \u001b[1m● \u001b[22mTest suite failed to run\n\n    \u001b[96msrc/modules.tests/userInterface.test.tsx\u001b[0m:\u001b[93m1\u001b[0m:\u001b[93m1\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1208: \u001b[0m'userInterface.test.tsx' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.\n\n    \u001b[7m1\u001b[0m \n    \u001b[7m \u001b[0m \u001b[91m\u001b[0m\n","name":"E:\\Incubyte_Assignment\\incubyte-tdd-kata\\src\\modules.tests\\userInterface.test.tsx","startTime":1732306616408,"status":"failed","summary":""},{"assertionResults":[],"coverage":{},"endTime":1732306616408,"message":"  \u001b[1m● \u001b[22mTest suite failed to run\n\n    \u001b[96msrc/modules.tests/utilsFunctionality.test.tsx\u001b[0m:\u001b[93m1\u001b[0m:\u001b[93m21\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2307: \u001b[0mCannot find module '../stringCalculator' or its corresponding type declarations.\n\n    \u001b[7m1\u001b[0m import { add } from \"../stringCalculator\";\n    \u001b[7m \u001b[0m \u001b[91m                    ~~~~~~~~~~~~~~~~~~~~~\u001b[0m\n","name":"E:\\Incubyte_Assignment\\incubyte-tdd-kata\\src\\modules.tests\\utilsFunctionality.test.tsx","startTime":1732306616408,"status":"failed","summary":""}],"wasInterrupted":false}
+{
+    "numFailedTestSuites": 0,
+    "numFailedTests": 0,
+    "numPassedTestSuites": 2,
+    "numPassedTests": 2,
+    "numPendingTestSuites": 0,
+    "numPendingTests": 0,
+    "numRuntimeErrorTestSuites": 0,
+    "numTodoTests": 0,
+    "numTotalTestSuites": 2,
+    "numTotalTests": 2,
+    "openHandles": [],
+    "snapshot": {
+        "added": 0,
+        "didUpdate": false,
+        "failure": false,
+        "filesAdded": 0,
+        "filesRemoved": 0,
+        "filesRemovedList": [],
+        "filesUnmatched": 0,
+        "filesUpdated": 0,
+        "matched": 0,
+        "total": 0,
+        "unchecked": 0,
+        "uncheckedKeysByFile": [],
+        "unmatched": 0,
+        "updated": 0
+    },
+    "startTime": 1732306926115,
+    "success": true,
+    "testResults": [
+        {
+            "assertionResults": [
+                {
+                    "ancestorTitles": [
+                        "String Calculator"
+                    ],
+                    "duration": 8,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "String Calculator should return 0 for an empty string",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "status": "passed",
+                    "title": "should return 0 for an empty string"
+                }
+            ],
+            "endTime": 1732306929057,
+            "message": "",
+            "name": "E:\\Incubyte_Assignment\\incubyte-tdd-kata\\src\\modules.tests\\utilsFunctionality.test.tsx",
+            "startTime": 1732306926617,
+            "status": "passed",
+            "summary": ""
+        },
+        {
+            "assertionResults": [
+                {
+                    "ancestorTitles": [
+                        "sample ui test"
+                    ],
+                    "duration": 12,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "sample ui test pass",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "status": "passed",
+                    "title": "pass"
+                }
+            ],
+            "endTime": 1732306929854,
+            "message": "",
+            "name": "E:\\Incubyte_Assignment\\incubyte-tdd-kata\\src\\modules.tests\\userInterface.test.tsx",
+            "startTime": 1732306926618,
+            "status": "passed",
+            "summary": ""
+        }
+    ],
+    "wasInterrupted": false
+}

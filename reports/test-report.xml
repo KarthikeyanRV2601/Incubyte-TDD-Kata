@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Jest Tests" tests="0" failures="0" errors="0" time="3.952">
+<testsuites name="Jest Tests" tests="2" failures="0" errors="0" time="3.864">
+  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:22:06" time="2.44" tests="1">
+    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-22T20:22:06" time="3.236" tests="1">
+    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.012">
+    </testcase>
+  </testsuite>
 </testsuites>
