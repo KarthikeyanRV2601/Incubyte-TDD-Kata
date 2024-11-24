@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Jest Tests" tests="19" failures="0" errors="0" time="7.442">
-  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T16:39:43" time="3.713" tests="1">
-    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.01">
+<testsuites name="Jest Tests" tests="19" failures="2" errors="0" time="7.636">
+  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T19:03:21" time="3.627" tests="1">
+    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.009">
     </testcase>
   </testsuite>
-  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T16:39:43" time="3.721" tests="7">
+  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T19:03:21" time="3.706" tests="7">
     <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.012">
     </testcase>
-    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0">
+    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0">
+    </testcase>
+    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="src\module.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T19:03:21" time="3.705" tests="7">
+    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.013">
+    </testcase>
+    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.001">
     </testcase>
     <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.001">
     </testcase>
@@ -17,33 +33,129 @@
     </testcase>
     <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0">
     </testcase>
-    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.009">
+    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.008">
     </testcase>
   </testsuite>
-  <testsuite name="src\module.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T16:39:43" time="3.728" tests="7">
-    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.01">
+  <testsuite name="src\module.tests\userInterface.test.tsx" errors="0" failures="2" skipped="0" timestamp="2024-11-24T19:03:21" time="6.151" tests="4">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" name="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" time="0.041">
     </testcase>
-    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.001">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" name="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" time="0.251">
+      <failure>TestingLibraryElementError: Unable to find an element by: [data-testid=&quot;resultComponentTestId&quot;]
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;string-calculator-component-class&quot;
+    &gt;
+      &lt;h1
+        data-testid=&quot;headerComponentTestId&quot;
+      &gt;
+        String Calculator - Addition
+      &lt;/h1&gt;
+      &lt;textarea
+        class=&quot;invalid-input-box&quot;
+        data-testid=&quot;textAreaComponentTestId&quot;
+        placeholder=&quot;Enter numbers (e.g., 1,2,3)&quot;
+      &gt;
+        1
+2,3
+      &lt;/textarea&gt;
+      &lt;button
+        class=&quot;button&quot;
+        data-testid=&quot;calculateButtonComponentTestId&quot;
+        disabled=&quot;&quot;
+      &gt;
+        Calculate
+      &lt;/button&gt;
+      &lt;div
+        class=&quot;input-rules&quot;
+      &gt;
+        &lt;h3&gt;
+          Input Rules:
+        &lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;
+            Separate multiple numbers with commas (e.g., &quot;1,2,3&quot;).
+          &lt;/li&gt;
+          &lt;li&gt;
+            Numbers can be entered line by line to process.
+          &lt;/li&gt;
+          &lt;li&gt;
+            Provide custom delimitter by following the format &quot;//[delimiter]\n[numbers…]&quot;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+    at Object.getElementError (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\config.js:37:19)
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:76:38
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:52:17
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:95:19
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:45:31
+    at Generator.next (&lt;anonymous&gt;)
+    at fulfilled (E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:5:58)</failure>
     </testcase>
-    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" name="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" time="0.197">
+      <failure>TestingLibraryElementError: Unable to find an element by: [data-testid=&quot;resultComponentTestId&quot;]
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;string-calculator-component-class&quot;
+    &gt;
+      &lt;h1
+        data-testid=&quot;headerComponentTestId&quot;
+      &gt;
+        String Calculator - Addition
+      &lt;/h1&gt;
+      &lt;textarea
+        class=&quot;invalid-input-box&quot;
+        data-testid=&quot;textAreaComponentTestId&quot;
+        placeholder=&quot;Enter numbers (e.g., 1,2,3)&quot;
+      &gt;
+        1
+2,3
+      &lt;/textarea&gt;
+      &lt;button
+        class=&quot;button&quot;
+        data-testid=&quot;calculateButtonComponentTestId&quot;
+        disabled=&quot;&quot;
+      &gt;
+        Calculate
+      &lt;/button&gt;
+      &lt;div
+        class=&quot;input-rules&quot;
+      &gt;
+        &lt;h3&gt;
+          Input Rules:
+        &lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;
+            Separate multiple numbers with commas (e.g., &quot;1,2,3&quot;).
+          &lt;/li&gt;
+          &lt;li&gt;
+            Numbers can be entered line by line to process.
+          &lt;/li&gt;
+          &lt;li&gt;
+            Provide custom delimitter by following the format &quot;//[delimiter]\n[numbers…]&quot;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+    at Object.getElementError (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\config.js:37:19)
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:76:38
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:52:17
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:95:19
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:60:31
+    at Generator.next (&lt;anonymous&gt;)
+    at fulfilled (E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:5:58)</failure>
     </testcase>
-    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0">
-    </testcase>
-    <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0.001">
-    </testcase>
-    <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0">
-    </testcase>
-    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.01">
-    </testcase>
-  </testsuite>
-  <testsuite name="src\module.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T16:39:43" time="5.956" tests="4">
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" name="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" time="0.032">
-    </testcase>
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" name="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" time="0.214">
-    </testcase>
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" name="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" time="0.206">
-    </testcase>
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders NaN for a invalid input provided" name="String Calculator UI Testing the StringAdditionComponent renders NaN for a invalid input provided" time="0.174">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent disable the calculate button for a invalid input provided" name="String Calculator UI Testing the StringAdditionComponent disable the calculate button for a invalid input provided" time="0.112">
     </testcase>
   </testsuite>
 </testsuites>

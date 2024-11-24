@@ -62,7 +62,7 @@ describe('String Calculator UI', () => {
       expect(resultComponent.textContent).toBe(`${translations.labels.result}: 6`);
     });
 
-    test('renders NaN for a invalid input provided', async () => {
+    test('disable the calculate button for a invalid input provided', async () => {
       const { getByTestId } = render(<StringAdditionComponent />);
 
       const inputTextAreaComponent = getByTestId('textAreaComponentTestId');
@@ -70,12 +70,11 @@ describe('String Calculator UI', () => {
 
       // Simulate user input and button click
       await userEvent.type(inputTextAreaComponent, "abc");
-      await userEvent.click(buttonComponent);
 
-      // Check if results component displays the expected value
-      const resultComponent = getByTestId("resultComponentTestId");
-      expect(resultComponent).toBeInTheDocument();
-      expect(resultComponent.textContent).toBe(`${translations.labels.result}: NaN`);
+      // Check if button component is disabled
+      expect(buttonComponent).toBeInTheDocument();
+      expect((buttonComponent as HTMLButtonElement).disabled).toBe(true);
     });
+    
   });
 });
