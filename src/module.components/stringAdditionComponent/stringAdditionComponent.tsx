@@ -7,29 +7,25 @@ const { translations } = root;
 
 export const StringAdditionComponent: React.FC = () => {
     const [input, setInput] = useState<string>("");
-    const [result, setResult] = useState<number | string>("");
     const [isValid, setIsValid] = useState<boolean>(true);
-
-    const validateInput = useCallback((value: string): boolean => {
-        const regex = /^[\d,]*$/;
-        return regex.test(value);
-    }, []);
+    const [additionResult, setAdditionResult] = useState<number>();
+    const [showResult, setShowResult] = useState<boolean>();
 
     const handleInputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>): void => {
         const newValue = event.target.value;
+        // Calling our main utility function
+        const { valid, result } = add(newValue);
+        setIsValid(valid);
+        setAdditionResult(result);
+        setShowResult(false);
         setInput(newValue);
-        setIsValid(validateInput(newValue));
-    }, [setInput, setIsValid, validateInput]);
+    }, [input, setInput, setIsValid, setAdditionResult, setShowResult]);
 
     const handleCalculate = useCallback((): void => {
-        try {
-            // Calling our main utility function
-            const sum = add(input);
-            setResult(sum);
-        } catch (error) {
-            setResult(error instanceof Error ? error.message : "Unknown Error");
+        if (isValid) {
+            setShowResult(true);
         }
-    }, [setResult, input]);
+    }, [isValid, setShowResult]);
 
     return (
         <div className="string-calculator-component-class">
@@ -44,7 +40,7 @@ export const StringAdditionComponent: React.FC = () => {
             <button className="button" onClick={handleCalculate} data-testid="calculateButtonComponentTestId" disabled={!isValid}>
                 {translations.buttons.calculate}
             </button>
-            {result !== "" && <div className="result" id="resultComponentId" data-testid="resultComponentTestId">{translations.labels.result}: {result}</div>}
+            {showResult && <div className="result" id="resultComponentId" data-testid="resultComponentTestId">{translations.labels.result}: {additionResult}</div>}
             <InputRulesComponent translations={translations} />
         </div>
     );

@@ -1,6 +1,11 @@
-export function add(numbers: string): number {
+import { StringCalculatorUtilsResponse } from "../module.models";
+
+export function add(numbers: string): StringCalculatorUtilsResponse {
     // Now we are handling empty string
-    if (numbers === "") return 0;
+    if (numbers === "") return {
+        valid: true,
+        result: 0
+    };
 
     //Now we are handling the comma , new lines or any custom delimiter seperated numbers
     const delimiterMatch = numbers.match(/^\/\/(.+)\n/);
@@ -19,5 +24,9 @@ export function add(numbers: string): number {
         throw new Error(`Negative numbers not allowed: ${negatives.join(",")}`);
     }
 
-    return numbersSplitted.reduce((sum, num) => sum + num, 0);
+    const result = numbersSplitted.reduce((sum, num) => sum + num, 0);
+    return {
+        valid: !!result,
+        result: result,
+    }
 }

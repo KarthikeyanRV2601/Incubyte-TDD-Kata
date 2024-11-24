@@ -5,3 +5,8 @@ export interface Translations {
 export interface InputRulesComponentProps {
     translations: Translations;
 }
+
+export interface StringCalculatorUtilsResponse {
+    valid: boolean;
+    result: number;
+}
