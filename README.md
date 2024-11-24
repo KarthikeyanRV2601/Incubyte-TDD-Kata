@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# **String Calculator - A Test-Driven Development Project**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Project Overview**
 
-## Available Scripts
+The **String Calculator** project demonstrates the application of **Test-Driven Development (TDD)** principles alongside a user-focused frontend design. This project delivers a modular, scalable, and user-friendly string calculator with robust tests and an elegant interface.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### **Features**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### **Backend Logic**
+- **String Calculation**:
+  - Handles empty strings, single numbers, and multiple comma-separated numbers.
+  - Supports new line (`\n`) delimiters for flexible input.
+  - Allows custom delimiters (e.g., `//;\n1;2`).
+  - Throws descriptive errors for negative numbers, listing invalid inputs.
+  - Processes any number of inputs efficiently.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### **Frontend UI**
+- **Interactive and User-Friendly**:
+  - Input box for entering strings.
+  - Dynamic result display with error handling.
+  - Input rules are displayed.
+  - Input field validation is handled
+- **Responsive Design**:
+  - Sleek, modern interface optimized for desktop and mobile views.
+  - Intuitive interactions for a seamless user experience.
 
-### `npm test`
+#### **Testing**
+- **Backend TDD**: Comprehensive test cases for all possible scenarios:
+  - Empty strings, valid inputs, and custom delimiters.
+  - Negative number exceptions and invalid input handling.
+- **Frontend Testing with Cypress**:
+  - End-to-end tests for UI functionality and validation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## **Tech Stack**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| **Technology**   | **Usage**                                |
+|-------------------|------------------------------------------|
+| **TypeScript**    | Core logic and type-safe development.    |
+| **React**         | Frontend framework for building the UI.  |
+| **Node.js**       | Backend support for serving the app.     |
+| **CSS/SCSS**      | Styling for responsive, modern design.   |
+| **Jest**          | Unit and integration testing.            |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **Project Structure**
 
-### `npm run eject`
+The project follows a modular structure for scalability and maintainability:
+- **`module.components`**: Reusable React components.
+- **`module.models`**: Types and interfaces for data handling.
+- **`module.pages`**: Page-specific components.
+- **`module.utils`**: Utility functions for core logic.
+- **`module.styles`**: SCSS files for styling.
+- **`module.tests`**: Jest and Cypress test cases.
+- **`module.resources`**: Translations and static resources.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **Setup Guide**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **1. Clone the Repository**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone <repository_url> string-calculator-tdd
+cd string-calculator-tdd
