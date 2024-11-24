@@ -19,7 +19,7 @@ export const StringAdditionComponent: React.FC = () => {
         setAdditionResult(result);
         setShowResult(false);
         setInput(newValue);
-    }, [input, setInput, setIsValid, setAdditionResult, setShowResult]);
+    }, [setInput, setIsValid, setAdditionResult, setShowResult]);
 
     const handleCalculate = useCallback((): void => {
         if (isValid) {
