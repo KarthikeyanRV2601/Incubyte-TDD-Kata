@@ -1,0 +1,39 @@
+// Class variables
+$component-class: '.string-calculator-component-class';
+
+
+// Color Variables
+$primary-color: #007bff;
+$hover-color: #0056b3;
+$text-color: #333;
+$invalid-border-color: #f44336;
+$disabled-background-color: #d3d3d3;
+$placeholder-color: #aaa;
+$background-color: #f9f9f9;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+
+// Border and Radius
+$border-radius: 5px;
+$input-border-color: #ccc;
+$input-focus-border-color: $primary-color;
+$input-border-radius: $border-radius;
+
+// Font Sizes
+$font-size: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+$font-size-heading: 20px;
+$font-size-button: 16px;
+
+// Spacing
+$padding: 10px;
+$input-width: 300px;
+$margin-bottom: 10px;
+$margin-top: 30px;
+$input-padding: 10px;
+$button-padding-x: 20px;
+$button-padding-y: 10px;
+
+// Font Family
+$font-family: Arial, sans-serif;
+

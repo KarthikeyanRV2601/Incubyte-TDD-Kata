@@ -1,4 +1,4 @@
-.string-calculator-component-class{
+.string-calculator-component-class {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,22 +12,65 @@
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+.string-calculator-component-class .input-box:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.string-calculator-component-class .input-box::-moz-placeholder {
+  color: #aaa;
+}
+.string-calculator-component-class .input-box::placeholder {
+  color: #aaa;
+}
+.string-calculator-component-class .invalid-input-box {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  border-color: #f44336;
 }
 .string-calculator-component-class .button {
-  background-color: #007bff;
-  color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
+  background-color: #007bff;
+  color: white;
 }
 .string-calculator-component-class .button:hover {
   background-color: #0056b3;
+}
+.string-calculator-component-class .button:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
 }
 .string-calculator-component-class .result {
   margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
   color: #333;
+}
+.string-calculator-component-class .input-rules {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.string-calculator-component-class .input-rules h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.string-calculator-component-class .input-rules ul li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
 }/*# sourceMappingURL=App.css.map */

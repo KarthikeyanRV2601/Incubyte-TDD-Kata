@@ -1,47 +1,129 @@
-$string-calculator-component-class: '.string-calculator-component-class';
+// Class variables
+$component-class: '.string-calculator-component-class';
+
+
+// Color Variables
 $primary-color: #007bff;
 $hover-color: #0056b3;
 $text-color: #333;
-$border-radius: 5px;
+$invalid-border-color: #f44336;
+$disabled-background-color: #d3d3d3;
+$placeholder-color: #aaa;
+$background-color: #f9f9f9;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
 
-#{$string-calculator-component-class} {
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px;
-        font-family: Arial, sans-serif;
-    }
+// Border and Radius
+$border-radius: 5px;
+$input-border-color: #ccc;
+$input-focus-border-color: $primary-color;
+$input-border-radius: $border-radius;
+
+// Font Sizes
+$font-size: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+$font-size-heading: 20px;
+$font-size-button: 16px;
+
+// Spacing
+$padding: 10px;
+$input-width: 300px;
+$margin-bottom: 10px;
+$margin-top: 30px;
+$input-padding: 10px;
+$button-padding-x: 20px;
+$button-padding-y: 10px;
+
+// Font Family
+$font-family: Arial, sans-serif;
+
+
+// Mixin Definitions
+@mixin inputBoxBaseStyles {
+    width: $input-width;
+    padding: $input-padding;
+    font-size: $font-size;
+    margin-bottom: $margin-bottom;
+    border: 1px solid $input-border-color;
+    border-radius: $border-radius;
+    transition: border-color 0.3s ease;
+}
+
+@mixin buttonBaseStyles {
+    padding: $button-padding-y $button-padding-x;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-size: $font-size-button;
+    transition: background-color 0.3s ease;
+}
+
+// Component Styles
+#{$component-class} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    font-family: $font-family;
 
     .input-box {
-        width: 300px;
-        padding: 10px;
-        font-size: 16px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: $border-radius;
+        @include inputBoxBaseStyles();
+
+        &:focus {
+            border-color: $input-focus-border-color;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $placeholder-color;
+        }
+    }
+
+    .invalid-input-box {
+        @include inputBoxBaseStyles();
+        border-color: $invalid-border-color;
     }
 
     .button {
+        @include buttonBaseStyles();
         background-color: $primary-color;
         color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: $border-radius;
-        cursor: pointer;
-        font-size: 16px;
 
         &:hover {
             background-color: $hover-color;
+        }
+
+        &:disabled {
+            background-color: $disabled-background-color;
+            cursor: not-allowed;
         }
     }
 
     .result {
         margin-top: 20px;
-        font-size: 18px;
+        font-size: $font-size-large;
         font-weight: bold;
         color: $text-color;
     }
 
+    // Input Rules Section
+    .input-rules {
+        margin-top: $margin-top;
+        background-color: $background-color;
+        padding: 15px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px $box-shadow-color;
+    }
 
+    .input-rules h3 {
+        font-size: $font-size-heading;
+        color: $text-color;
+        margin-bottom: 10px;
+    }
+
+    .input-rules ul li {
+        font-size: $font-size-small;
+        color: #777;
+        margin-bottom: 5px;
+    }
 }

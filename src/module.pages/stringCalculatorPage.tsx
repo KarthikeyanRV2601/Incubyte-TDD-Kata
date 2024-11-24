@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StringAdditionComponent } from "../module.components/stringAdditionComponent";
+import React from "react";
+import { StringAdditionComponent } from "../module.components/stringAdditionComponent/stringAdditionComponent";
 
 export const StringCalculatorPage = () => {
     return(
