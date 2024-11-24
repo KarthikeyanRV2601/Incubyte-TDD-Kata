@@ -1,43 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Jest Tests" tests="16" failures="0" errors="0" time="6.076">
-  <testsuite name="src\module.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T14:37:10" time="5.15" tests="1">
-    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.01">
+<testsuites name="Jest Tests" tests="16" failures="1" errors="0" time="7.928">
+  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T16:11:05" time="5.247" tests="1">
+    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.013">
     </testcase>
   </testsuite>
-  <testsuite name="src\modules.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T14:37:10" time="5.221" tests="1">
-    <testcase classname="sample ui test pass" name="sample ui test pass" time="0.012">
+  <testsuite name="src\module.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T16:11:05" time="5.382" tests="7">
+    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.014">
     </testcase>
-  </testsuite>
-  <testsuite name="src\module.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T14:37:10" time="5.289" tests="7">
-    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.009">
+    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.001">
     </testcase>
-    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.013">
+    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.001">
     </testcase>
-    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.003">
-    </testcase>
-    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0.003">
-    </testcase>
-    <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0.003">
-    </testcase>
-    <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0.002">
-    </testcase>
-    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.02">
-    </testcase>
-  </testsuite>
-  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T14:37:10" time="5.317" tests="7">
-    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.013">
-    </testcase>
-    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.014">
-    </testcase>
-    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.003">
-    </testcase>
-    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0.002">
+    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0.001">
     </testcase>
     <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0.001">
     </testcase>
-    <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0.002">
+    <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0.001">
     </testcase>
-    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.024">
+    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="src\modules.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T16:11:05" time="5.378" tests="7">
+    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.013">
+    </testcase>
+    <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0.001">
+    </testcase>
+    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="src\module.tests\userInterface.test.tsx" errors="0" failures="1" skipped="0" timestamp="2024-11-24T16:11:05" time="6.427" tests="1">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the input field and button" name="String Calculator UI Testing the StringAdditionComponent renders the input field and button" time="0.042">
+      <failure>TestingLibraryElementError: Unable to find an element with the text: Result: 6. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;string-calculator-component-class&quot;
+    &gt;
+      &lt;h1&gt;
+        String Calculator
+      &lt;/h1&gt;
+      &lt;textarea
+        class=&quot;input-box&quot;
+        placeholder=&quot;Enter numbers (e.g., 1,2,3)&quot;
+      /&gt;
+      &lt;button
+        class=&quot;button&quot;
+      &gt;
+        Calculate
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+    at Object.getElementError (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\config.js:37:19)
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:76:38
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:52:17
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\@testing-library\dom\dist\query-helpers.js:95:19
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:28:22
+    at Generator.next (&lt;anonymous&gt;)
+    at E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:8:71
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt;.__awaiter (E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:4:12)
+    at Object.&lt;anonymous&gt; (E:\Incubyte_Assignment\incubyte-tdd-kata\src\module.tests\userInterface.test.tsx:12:59)
+    at Promise.then.completed (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:121:9)
+    at run (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (E:\Incubyte_Assignment\incubyte-tdd-kata\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
     </testcase>
   </testsuite>
 </testsuites>

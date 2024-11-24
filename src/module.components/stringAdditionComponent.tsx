@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { add } from "../module.utils";
+import { root } from "../module.resources/translations/stringAdditionComponentTranslations";
+
+const { translations } = root;
 
 export const StringAdditionComponent: React.FC = () => {
     const [input, setInput] = useState<string>("");
@@ -23,12 +26,12 @@ export const StringAdditionComponent: React.FC = () => {
             <h1>String Calculator</h1>
             <textarea
                 className="input-box"
-                placeholder="Enter numbers (e.g., 1,2,3)"
+                placeholder={root.translations.placeHolders.enterNumbersInput}
                 value={input}
                 onChange={handleInputChange}
             />
             <button className="button" onClick={handleCalculate}>
-                Calculate
+                {translations.buttons.calculate}
             </button>
             {result !== "" && <div className="result">Result: {result}</div>}
         </div>

@@ -16,5 +16,6 @@ module.exports = {
             suiteName: 'Jest Tests',
             usePathForSuiteName: 'true',
         }]
-    ]
+    ],
+    testEnvironment: "jsdom",
 };
