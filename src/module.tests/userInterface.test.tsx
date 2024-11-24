@@ -21,8 +21,8 @@ describe('String Calculator UI', () => {
       expect(button).toBeInTheDocument();
 
       // Simulate user input and button click
-      userEvent.type(input, "1\n2,3");
-      userEvent.click(button);
+      await userEvent.type(input, "1\n2,3");
+      await userEvent.click(button);
 
       // Check results
       const result = getByText("Result: 6");
