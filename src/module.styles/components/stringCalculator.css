@@ -1,4 +1,4 @@
-.string-calculator-component-class{
+.string-calculator-component-class .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,4 +30,4 @@
   font-size: 18px;
   font-weight: bold;
   color: #333;
-}/*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=stringCalculator.css.map */
