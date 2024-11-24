@@ -8,25 +8,58 @@ import { root as StringAdditionComponentTranslations } from '../module.resources
 describe('String Calculator UI', () => {
 
   describe('Testing the StringAdditionComponent', () => {
-
-    test('renders the input field and button', async () => {
-      const { getByPlaceholderText, getByText } = render(<StringAdditionComponent />);
+    const translations = StringAdditionComponentTranslations.translations;
+    test('renders the header, input field and button', async () => {
+      const { getByTestId } = render(<StringAdditionComponent />);
 
       // Access input field and button
-      const input = getByPlaceholderText(StringAdditionComponentTranslations.translations.placeHolders.enterNumbersInput);
-      const button = getByText(StringAdditionComponentTranslations.translations.buttons.calculate);
+      const headerComponent = getByTestId('headerComponentTestId');
+      const inputTextAreaComponent = getByTestId('textAreaComponentTestId');
+      const buttonComponent = getByTestId('calculateButtonComponentTestId');
 
       // Assertions
-      expect(input).toBeInTheDocument();
-      expect(button).toBeInTheDocument();
+      expect(headerComponent).toBeInTheDocument();
+      // Check for headerComponent text content
+      expect(headerComponent.textContent).toBe(translations.titles.StringCalculatorAddition);
+
+      expect(inputTextAreaComponent).toBeInTheDocument();
+      // Check for input text area placeholder text content
+      expect((inputTextAreaComponent as HTMLTextAreaElement).placeholder).toBe(translations.placeHolders.enterNumbersInput);
+
+      expect(buttonComponent).toBeInTheDocument();
+      // Check for butotn label content
+      expect(buttonComponent.textContent).toBe(translations.buttons.calculate);
+    });
+
+    test('renders the result component for a input provided', async () => {
+      const { getByTestId } = render(<StringAdditionComponent />);
+
+      const inputTextAreaComponent = getByTestId('textAreaComponentTestId');
+      const buttonComponent = getByTestId('calculateButtonComponentTestId');
 
       // Simulate user input and button click
-      await userEvent.type(input, "1\n2,3");
-      await userEvent.click(button);
+      await userEvent.type(inputTextAreaComponent, "1\n2,3");
+      await userEvent.click(buttonComponent);
 
-      // Check results
-      const result = getByText("Result: 6");
-      expect(result).toBeInTheDocument();
+      // Check if results is present
+      const resultComponent = getByTestId("resultComponentTestId");
+      expect(resultComponent).toBeInTheDocument();
+    });
+
+    test('renders the right result for a valid input provided', async () => {
+      const { getByTestId } = render(<StringAdditionComponent />);
+
+      const inputTextAreaComponent = getByTestId('textAreaComponentTestId');
+      const buttonComponent = getByTestId('calculateButtonComponentTestId');
+
+      // Simulate user input and button click
+      await userEvent.type(inputTextAreaComponent, "1\n2,3");
+      await userEvent.click(buttonComponent);
+
+      // Check if results component displays the expected value
+      const resultComponent = getByTestId("resultComponentTestId");
+      expect(resultComponent).toBeInTheDocument();
+      expect(resultComponent.textContent).toBe(`${translations.labels.result}: 6`);
     });
   });
 });

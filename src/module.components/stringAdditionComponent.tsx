@@ -23,17 +23,18 @@ export const StringAdditionComponent: React.FC = () => {
 
     return (
         <div className="string-calculator-component-class">
-            <h1>String Calculator</h1>
+            <h1 data-testid="headerComponentTestId">{translations.titles.StringCalculatorAddition}</h1>
             <textarea
                 className="input-box"
-                placeholder={root.translations.placeHolders.enterNumbersInput}
+                placeholder={translations.placeHolders.enterNumbersInput}
                 value={input}
                 onChange={handleInputChange}
+                data-testid="textAreaComponentTestId"
             />
-            <button className="button" onClick={handleCalculate}>
+            <button className="button" onClick={handleCalculate} data-testid="calculateButtonComponentTestId">
                 {translations.buttons.calculate}
             </button>
-            {result !== "" && <div className="result">Result: {result}</div>}
+            {result !== "" && <div className="result" id="resultComponentId" data-testid="resultComponentTestId">{translations.labels.result}: {result}</div>}
         </div>
     );
 };
