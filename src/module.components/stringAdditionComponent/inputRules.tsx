@@ -3,12 +3,12 @@ import { InputRulesComponentProps } from "../../module.models";
 
 export const InputRulesComponent: React.FC<InputRulesComponentProps> = ({ translations }) => {
     return (
-        <div className="input-rules">
-            <h3>{translations.titles.inputRules}</h3>
-            <ul>
-                <li>{translations.messages.inputRule1}</li>
-                <li>{translations.messages.inputRule2}</li>
-                <li>{translations.messages.inputRule3}</li>
+        <div className="input-rules" data-testid="inputRulesComponentTestId">
+            <h3 data-testid="inputRulesHeaderComponentTestId">{translations.titles.inputRules}</h3>
+            <ul data-testid="inputRulesUlComponentTestId">
+                {
+                    translations.messages.inputRules.map((rule: string, index: number) => <li key={index + 1} data-testid={`inputRulesLi${index + 1}ComponentTestId`}>{rule}</li>)
+                }
             </ul>
         </div>
     );

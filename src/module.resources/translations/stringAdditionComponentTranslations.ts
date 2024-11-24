@@ -14,9 +14,11 @@ export const root = {
             result: 'Result'
         },
         messages: {
-            inputRule1: 'Separate multiple numbers with commas (e.g., "1,2,3").',
-            inputRule2: 'Numbers can be entered line by line to process.',
-            inputRule3: 'Provide custom delimitter by following the format "//[delimiter]\\n[numbers…]"'
+            inputRules: [
+                'Separate multiple numbers with commas (e.g., "1,2,3").',
+                'Numbers can be entered line by line to process.',
+                'Provide custom delimitter by following the format "//[delimiter]\\n[numbers…]"'
+            ]
         }
     }
 }

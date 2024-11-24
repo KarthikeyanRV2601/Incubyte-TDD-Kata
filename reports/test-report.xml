@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Jest Tests" tests="11" failures="0" errors="0" time="4.711">
-  <testsuite name="src\module.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T19:45:54" time="3.326" tests="7">
-    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.007">
+<testsuites name="Jest Tests" tests="12" failures="0" errors="0" time="8.848">
+  <testsuite name="src\module.tests\utilsFunctionality.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T19:57:33" time="3.849" tests="7">
+    <testcase classname="String Calculator should return 0 for an empty string" name="String Calculator should return 0 for an empty string" time="0.012">
     </testcase>
     <testcase classname="String Calculator should return the number itself if only one number is provided" name="String Calculator should return the number itself if only one number is provided" time="0">
     </testcase>
-    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0.001">
+    <testcase classname="String Calculator should return the sum of two comma-separated numbers" name="String Calculator should return the sum of two comma-separated numbers" time="0">
     </testcase>
-    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0">
+    <testcase classname="String Calculator should return the sum of more than two comma-separated numbers" name="String Calculator should return the sum of more than two comma-separated numbers" time="0.001">
     </testcase>
-    <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0.001">
+    <testcase classname="String Calculator should handle newlines as delimiters" name="String Calculator should handle newlines as delimiters" time="0.002">
     </testcase>
     <testcase classname="String Calculator should handle custom delimiters" name="String Calculator should handle custom delimiters" time="0">
     </testcase>
-    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.007">
+    <testcase classname="String Calculator should throw an error for negative numbers" name="String Calculator should throw an error for negative numbers" time="0.013">
     </testcase>
   </testsuite>
-  <testsuite name="src\module.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T19:45:54" time="3.436" tests="4">
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" name="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" time="0.041">
+  <testsuite name="src\module.tests\userInterface.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-11-24T19:57:33" time="6.9" tests="5">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" name="String Calculator UI Testing the StringAdditionComponent renders the header, input field and button" time="0.052">
     </testcase>
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" name="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" time="0.217">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" name="String Calculator UI Testing the StringAdditionComponent renders the result component for a input provided" time="0.234">
     </testcase>
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" name="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" time="0.204">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" name="String Calculator UI Testing the StringAdditionComponent renders the right result for a valid input provided" time="0.205">
     </testcase>
-    <testcase classname="String Calculator UI Testing the StringAdditionComponent disable the calculate button for a invalid input provided" name="String Calculator UI Testing the StringAdditionComponent disable the calculate button for a invalid input provided" time="0.094">
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent disable the calculate button for a invalid input provided" name="String Calculator UI Testing the StringAdditionComponent disable the calculate button for a invalid input provided" time="0.079">
+    </testcase>
+    <testcase classname="String Calculator UI Testing the StringAdditionComponent Input rules component is displayed" name="String Calculator UI Testing the StringAdditionComponent Input rules component is displayed" time="0.006">
     </testcase>
   </testsuite>
 </testsuites>

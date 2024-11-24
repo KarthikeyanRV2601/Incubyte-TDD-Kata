@@ -75,6 +75,22 @@ describe('String Calculator UI', () => {
       expect(buttonComponent).toBeInTheDocument();
       expect((buttonComponent as HTMLButtonElement).disabled).toBe(true);
     });
-    
+
+    test('Input rules component is displayed', async () => {
+      const { getByTestId } = render(<StringAdditionComponent />);
+
+      const inputRulesHeader = getByTestId('inputRulesHeaderComponentTestId');
+      expect(inputRulesHeader).toBeInTheDocument();
+
+      translations.messages.inputRules.forEach((rule, index) => {
+        const inputRulesLiRlement = getByTestId(`inputRulesLi${index + 1}ComponentTestId`);
+
+        // Check if input rules li component is present and has the message
+        expect(inputRulesLiRlement).toBeInTheDocument();
+        expect(inputRulesLiRlement.textContent).toBe(rule);
+
+      })
+    });
+
   });
 });
