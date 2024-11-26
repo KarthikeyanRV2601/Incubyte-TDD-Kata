@@ -1,6 +1,6 @@
 {
   "name": "incubyte-tdd-kata",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.119",

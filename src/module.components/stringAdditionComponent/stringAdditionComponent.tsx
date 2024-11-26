@@ -18,15 +18,19 @@ export const StringAdditionComponent: React.FC = () => {
     const [toolbarVisible, setToolbarVisible] = useState<boolean>(false);
     const [customToolbarButtons, setCustomToolbarButtons] = useState<string[]>([]);
 
-    const handleInputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>): void => {
-        const newValue = event.target.value;
-        // Calling our main utility function
+    const handleUtilFunctionCalling = useCallback((newValue: string) => {
         const { valid, result } = StringCalculatorUtils.add(newValue);
         setIsValid(valid);
         setAdditionResult(result);
         setShowResult(false);
         setInput(newValue);
     }, [setInput, setIsValid, setAdditionResult, setShowResult]);
+
+    const handleInputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>): void => {
+        const newValue = event.target.value;
+        // Calling our main utility function
+        handleUtilFunctionCalling(newValue)
+    }, [handleUtilFunctionCalling]);
 
     const handleCalculate = useCallback((): void => {
         if (isValid) {
@@ -56,13 +60,9 @@ export const StringAdditionComponent: React.FC = () => {
     }, [setToolbarVisible]);
 
     const handleToolBarInsertCharacter = useCallback((char: string) => {
-        setInput((prevInput) => `${prevInput}${char}`);
+        handleUtilFunctionCalling(`${input}${char}`);
         textAreaRef.current?.focus();
-    }, [setInput]);
-
-    // Toolbar interaction ends
-
-
+    }, [handleUtilFunctionCalling, input]);
 
 
     return (
