@@ -13,7 +13,10 @@ export const StringAdditionComponent: React.FC = () => {
     const [additionResult, setAdditionResult] = useState<number>();
     const [showResult, setShowResult] = useState<boolean>();
     const [toolbarPosition, setToolbarPosition] = useState<Point>({ x: 0, y: 0 });
+    const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
     const toolbarRef = useRef<HTMLDivElement | null>(null);
+    const [toolbarVisible, setToolbarVisible] = useState<boolean>(false);
+
 
     const handleInputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>): void => {
         const newValue = event.target.value;
@@ -31,31 +34,65 @@ export const StringAdditionComponent: React.FC = () => {
         }
     }, [isValid, setShowResult]);
 
+
+    // Toolbar interactions starts
+
     const handleTextAreaFocus = useCallback((event: React.FocusEvent<HTMLTextAreaElement>) => {
-        const { clientX, clientY } = event.nativeEvent as any;
-        setToolbarPosition({ x: clientX + 10, y: clientY + 10 }); // Position toolbar near cursor
-    }, []);
+        const textareaRect = event.target.getBoundingClientRect(); // Get the position of the textarea
+        setToolbarPosition({
+            x: textareaRect.left + 10,
+            y: textareaRect.top - 40,
+        });
+        setToolbarVisible(true);
+    }, [setToolbarPosition]);
+
+    const handleTextAreaBlur = useCallback((event: React.FocusEvent<HTMLTextAreaElement>) => {
+        if (toolbarRef.current && toolbarRef.current.contains(event.relatedTarget as Node)) {
+            return;
+        }
+        setToolbarVisible(false);
+    }, [setToolbarVisible]);
 
     const handleToolBarInsertCharacter = useCallback((char: string) => {
         setInput((prevInput) => `${prevInput}${char}`);
-    }, []);
+        textAreaRef.current?.focus();
+    }, [setInput]);
+
+    // Toolbar interaction ends
+
+
+
 
     return (
         <div className="string-calculator-component-class">
             <h1 data-testid="headerComponentTestId">{translations.titles.StringCalculatorAddition}</h1>
-            <textarea
-                className={isValid ? "input-box" : 'invalid-input-box'}
-                placeholder={translations.placeHolders.enterNumbersInput}
-                value={input}
-                onChange={handleInputChange}
-                data-testid="textAreaComponentTestId"
-            />
-            <button className="button" onClick={handleCalculate} data-testid="calculateButtonComponentTestId" disabled={!isValid}>
-                {translations.buttons.calculate}
-            </button>
-            {showResult && <div className="result" id="resultComponentId" data-testid="resultComponentTestId">{translations.labels.result}: {additionResult}</div>}
-            <FloatingToolbarComponent toolbarRef={toolbarRef} toolbarPosition={toolbarPosition} handleToolBarInsertCharacter={handleToolBarInsertCharacter} />
-            <InputRulesComponent translations={translations} />
+            <div className="input-result-rules-container">
+                <div className="input-result-container">
+                    <div className="input-box-container">
+                        <textarea
+                            className={isValid ? "input-box" : 'invalid-input-box'}
+                            placeholder={translations.placeHolders.enterNumbersInput}
+                            value={input}
+                            onChange={handleInputChange}
+                            data-testid="textAreaComponentTestId"
+                            onFocus={handleTextAreaFocus}
+                            onBlur={handleTextAreaBlur}
+                            ref={textAreaRef}
+                        />
+                        <button className="button" onClick={handleCalculate} data-testid="calculateButtonComponentTestId" disabled={!isValid}>
+                            {translations.buttons.calculate}
+                        </button>
+                    </div>
+                    {showResult && (
+                        <div className="result-card" data-testid="resultComponentTestId">
+                            <h3>{translations.labels.result}</h3>
+                            <p>{additionResult}</p>
+                        </div>
+                    )}
+                </div>
+                {toolbarVisible && <FloatingToolbarComponent toolbarRef={toolbarRef} toolbarPosition={toolbarPosition} handleToolBarInsertCharacter={handleToolBarInsertCharacter} />}
+                <InputRulesComponent translations={translations} />
+            </div>
         </div>
     );
 };

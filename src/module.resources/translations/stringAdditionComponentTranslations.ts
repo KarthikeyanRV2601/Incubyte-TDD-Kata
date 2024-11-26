@@ -15,10 +15,11 @@ export const root = {
         },
         messages: {
             inputRules: [
-                'Separate multiple numbers with commas (e.g., "1,2,3").',
-                'Numbers entered cannot be negative',
-                'Numbers can be entered line by line to process.',
-                'Provide custom delimitter by following the format "//[delimiter]\\n[numbers…]"'
+                'Separate numbers with commas (e.g., "1,2,3").',
+                'Negative numbers are not allowed.',
+                'You can enter numbers line by line.',
+                'Use a custom delimiter with the format: //[delimiter] [new line] [numbers seperated by the delimiter]',
+                'Custom delimimter example, //@ [new line] 1@2@3@4 .'
             ]
         }
     }

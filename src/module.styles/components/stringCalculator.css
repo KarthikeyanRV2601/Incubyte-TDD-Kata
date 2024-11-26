@@ -6,10 +6,10 @@
   font-family: Arial, sans-serif;
 }
 .string-calculator-component-class .input-box {
-  width: 300px;
-  padding: 10px;
+  width: 600px;
+  min-height: 300px;
+  padding: 0 10px 0 10px;
   font-size: 16px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s ease;
@@ -25,10 +25,10 @@
   color: #aaa;
 }
 .string-calculator-component-class .invalid-input-box {
-  width: 300px;
-  padding: 10px;
+  width: 600px;
+  min-height: 300px;
+  padding: 0 10px 0 10px;
   font-size: 16px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s ease;
@@ -51,26 +51,114 @@
   background-color: #d3d3d3;
   cursor: not-allowed;
 }
-.string-calculator-component-class .result {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+.string-calculator-component-class .input-rules-container {
+  width: 400px;
+  transition: height 0.3s ease-in-out;
 }
-.string-calculator-component-class .input-rules {
-  margin-top: 30px;
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.string-calculator-component-class .input-rules h3 {
+.string-calculator-component-class .input-rules-container h3 {
   font-size: 20px;
   color: #333;
   margin-bottom: 10px;
 }
-.string-calculator-component-class .input-rules ul li {
+.string-calculator-component-class .input-rules-container ul li {
   font-size: 14px;
   color: #777;
   margin-bottom: 5px;
+}
+.string-calculator-component-class .input-rules-container .input-rules-content {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.string-calculator-component-class .input-rules-container .input-rules-content.expanded {
+  opacity: 1;
+}
+.string-calculator-component-class .input-rules-container .input-rules-content.collapsed {
+  opacity: 0;
+}
+.string-calculator-component-class .toggle-rules-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+.string-calculator-component-class .toggle-rules-button:hover {
+  background-color: #0056b3;
+}
+.string-calculator-component-class .input-result-rules-container {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.string-calculator-component-class .input-result-container {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.string-calculator-component-class .input-box-container {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.string-calculator-component-class .result-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 30px;
+  width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.string-calculator-component-class .result-card h3 {
+  font-size: 20px;
+  color: #333;
+}
+.string-calculator-component-class .result-card p {
+  font-size: 18px;
+  color: #007bff;
+  font-weight: bold;
+}
+.string-calculator-component-class .floating-toolbar {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  /* Initially hidden */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.string-calculator-component-class .floating-toolbar button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+  background-color: #007bff;
+  color: white;
+}
+.string-calculator-component-class .floating-toolbar button:hover {
+  background-color: #0056b3;
 }/*# sourceMappingURL=stringCalculator.css.map */
