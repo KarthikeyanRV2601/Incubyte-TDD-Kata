@@ -149,7 +149,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   cursor: move;
 }
-.string-calculator-component-class .floating-toolbar button {
+.string-calculator-component-class .floating-toolbar .button-class {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -160,6 +160,34 @@
   background-color: #007bff;
   color: white;
 }
-.string-calculator-component-class .floating-toolbar button:hover {
+.string-calculator-component-class .floating-toolbar .button-class:hover {
   background-color: #0056b3;
+}
+.string-calculator-component-class .floating-toolbar .delete-button-class {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+}
+.string-calculator-component-class .floating-toolbar .custom-toolbar-buttons {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px;
+}
+.string-calculator-component-class .floating-toolbar .custom-character-input-container {
+  display: flex;
+  align-self: center;
+  margin-top: 10px;
+}
+.string-calculator-component-class .floating-toolbar .custom-character-input-container .custom-character-input {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  background: white;
+  color: #333;
 }/*# sourceMappingURL=stringCalculator.css.map */

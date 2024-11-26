@@ -16,7 +16,7 @@ export const StringAdditionComponent: React.FC = () => {
     const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
     const toolbarRef = useRef<HTMLDivElement | null>(null);
     const [toolbarVisible, setToolbarVisible] = useState<boolean>(false);
-
+    const [customToolbarButtons, setCustomToolbarButtons] = useState<string[]>([]);
 
     const handleInputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>): void => {
         const newValue = event.target.value;
@@ -93,7 +93,13 @@ export const StringAdditionComponent: React.FC = () => {
                         </div>
                     )}
                 </div>
-                {toolbarVisible && <FloatingToolbarComponent toolbarRef={toolbarRef} toolbarPosition={toolbarPosition} handleToolBarInsertCharacter={handleToolBarInsertCharacter} />}
+                {toolbarVisible && <FloatingToolbarComponent
+                    toolbarRef={toolbarRef}
+                    toolbarPosition={toolbarPosition}
+                    handleToolBarInsertCharacter={handleToolBarInsertCharacter}
+                    setCustomToolbarButtons={setCustomToolbarButtons}
+                    customToolbarButtons={customToolbarButtons}
+                />}
                 <InputRulesComponent translations={translations} />
             </div>
         </div>

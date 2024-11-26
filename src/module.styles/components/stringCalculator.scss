@@ -229,7 +229,7 @@ $animation-ease: ease-in-out;
         box-shadow: 0 2px 6px $box-shadow-color;
         cursor: move;
 
-        button {
+        .button-class {
             @include buttonBaseStyles();
             margin: 0 5px;
             background-color: $primary-color;
@@ -237,6 +237,35 @@ $animation-ease: ease-in-out;
 
             &:hover {
                 background-color: $hover-color;
+            }
+        }
+
+
+
+        .delete-button-class {
+            background: transparent;
+            border: none;
+            color: red;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 0;
+        }
+
+        .custom-toolbar-buttons {
+            display: inline-flex;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .custom-character-input-container {
+            display: flex;
+            align-self: center;
+            margin-top: 10px;
+
+            .custom-character-input {
+                @include buttonBaseStyles();
+                background: white;
+                color: $text-color;
             }
         }
     }
