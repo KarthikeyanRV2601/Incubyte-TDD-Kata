@@ -27,7 +27,8 @@ $font-size-button: 16px;
 
 // Spacing
 $padding: 10px;
-$input-width: 300px;
+$input-box-width: 600px;
+$input-box-height: 300px;
 $margin-bottom: 10px;
 $margin-top: 30px;
 $input-padding: 10px;
@@ -38,12 +39,18 @@ $button-padding-y: 10px;
 $font-family: Arial, sans-serif;
 
 
+// Animations
+$animation-duration: 0.3s;
+$animation-ease: ease-in-out;
+
+
+
 // Mixin Definitions
 @mixin inputBoxBaseStyles {
-    width: $input-width;
-    padding: $input-padding;
+    width: $input-box-width;
+    min-height: $input-box-height;
+    padding: 0 $input-padding 0 $input-padding;
     font-size: $font-size;
-    margin-bottom: $margin-bottom;
     border: 1px solid $input-border-color;
     border-radius: $border-radius;
     transition: border-color 0.3s ease;
@@ -56,6 +63,19 @@ $font-family: Arial, sans-serif;
     cursor: pointer;
     font-size: $font-size-button;
     transition: background-color 0.3s ease;
+}
+
+@mixin flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 // Component Styles
@@ -99,31 +119,154 @@ $font-family: Arial, sans-serif;
         }
     }
 
-    .result {
-        margin-top: 20px;
-        font-size: $font-size-large;
-        font-weight: bold;
-        color: $text-color;
-    }
-
     // Input Rules Section
-    .input-rules {
-        margin-top: $margin-top;
-        background-color: $background-color;
-        padding: 15px;
-        border-radius: 6px;
-        box-shadow: 0 2px 4px $box-shadow-color;
+
+    // Input Rules Container
+    .input-rules-container {
+        width: 400px;
+        transition: height $animation-duration $animation-ease;
+
+        h3 {
+            font-size: $font-size-heading;
+            color: $text-color;
+            margin-bottom: 10px;
+        }
+
+        ul li {
+            font-size: $font-size-small;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        // Input Rules Content
+        .input-rules-content {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+            transition: opacity $animation-duration $animation-ease;
+
+            &.expanded {
+                opacity: 1;
+            }
+
+            &.collapsed {
+                opacity: 0;
+                // display: none;
+            }
+        }
     }
 
-    .input-rules h3 {
-        font-size: $font-size-heading;
-        color: $text-color;
+    // Toggle Rules Button
+    .toggle-rules-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
         margin-bottom: 10px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #0056b3;
+        }
     }
 
-    .input-rules ul li {
-        font-size: $font-size-small;
-        color: #777;
-        margin-bottom: 5px;
+    .input-result-rules-container {
+        height: 600px;
+        @include flexRow();
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .input-result-container {
+        height: 600px;
+        @include flexColumn();
+        justify-content: flex-start;
+    }
+
+    .input-box-container {
+        height: 350px;
+        @include flexColumn();
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .result-card {
+        background-color: $background-color;
+        border: 1px solid $input-border-color;
+        border-radius: $border-radius;
+        padding: $padding;
+        margin-top: $margin-top;
+        width: $input-box-width;
+        box-shadow: 0 2px 4px $box-shadow-color;
+        text-align: center;
+
+        h3 {
+            font-size: $font-size-heading;
+            color: $text-color;
+        }
+
+        p {
+            font-size: $font-size-large;
+            color: $primary-color;
+            font-weight: bold;
+        }
+    }
+
+    .floating-toolbar {
+        position: absolute;
+        z-index: 10;
+        display: none;
+        /* Initially hidden */
+        background-color: $background-color;
+        border: 1px solid $input-border-color;
+        border-radius: $border-radius;
+        padding: $padding;
+        box-shadow: 0 2px 6px $box-shadow-color;
+        cursor: move;
+
+        .button-class {
+            @include buttonBaseStyles();
+            margin: 0 5px;
+            background-color: $primary-color;
+            color: white;
+
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+
+
+
+        .delete-button-class {
+            background: transparent;
+            border: none;
+            color: red;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 0;
+        }
+
+        .custom-toolbar-buttons {
+            display: inline-flex;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .custom-character-input-container {
+            display: flex;
+            align-self: center;
+            margin-top: 10px;
+
+            .custom-character-input {
+                @include buttonBaseStyles();
+                background: white;
+                color: $text-color;
+            }
+        }
     }
 }
