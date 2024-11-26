@@ -227,6 +227,7 @@ $animation-ease: ease-in-out;
         border-radius: $border-radius;
         padding: $padding;
         box-shadow: 0 2px 6px $box-shadow-color;
+        cursor: move;
 
         button {
             @include buttonBaseStyles();

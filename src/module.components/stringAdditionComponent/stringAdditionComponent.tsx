@@ -1,9 +1,9 @@
 import React, { useCallback, useState, useRef } from "react";
-import { add } from "../../module.utils";
 import { root } from "../../module.resources/translations/stringAdditionComponentTranslations";
 import { InputRulesComponent } from "./inputRules";
 import { Point } from "../../module.models";
 import { FloatingToolbarComponent } from "./floatingToolbarComponent";
+import { GeomtericalUtils, StringCalculatorUtils } from "../../module.utils";
 
 const { translations } = root;
 
@@ -21,7 +21,7 @@ export const StringAdditionComponent: React.FC = () => {
     const handleInputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>): void => {
         const newValue = event.target.value;
         // Calling our main utility function
-        const { valid, result } = add(newValue);
+        const { valid, result } = StringCalculatorUtils.add(newValue);
         setIsValid(valid);
         setAdditionResult(result);
         setShowResult(false);
@@ -37,17 +37,19 @@ export const StringAdditionComponent: React.FC = () => {
 
     // Toolbar interactions starts
 
-    const handleTextAreaFocus = useCallback((event: React.FocusEvent<HTMLTextAreaElement>) => {
-        const textareaRect = event.target.getBoundingClientRect(); // Get the position of the textarea
-        setToolbarPosition({
-            x: textareaRect.left + 10,
-            y: textareaRect.top - 40,
-        });
-        setToolbarVisible(true);
+    const handleTextAreaEnter = useCallback(() => {
+        const textAreaRect = GeomtericalUtils.getBoundingClientRect('textArea');
+        if (textAreaRect) {
+            setToolbarPosition({
+                x: textAreaRect.left + 10,
+                y: textAreaRect.top - 40,
+            });
+            setToolbarVisible(true);
+        }
     }, [setToolbarPosition]);
 
-    const handleTextAreaBlur = useCallback((event: React.FocusEvent<HTMLTextAreaElement>) => {
-        if (toolbarRef.current && toolbarRef.current.contains(event.relatedTarget as Node)) {
+    const handleTextAreaLeave = useCallback((event: any): void => {
+        if (GeomtericalUtils.isCursorWithinDiv(event as any, 'floating-toolbar-id')) {
             return;
         }
         setToolbarVisible(false);
@@ -71,12 +73,13 @@ export const StringAdditionComponent: React.FC = () => {
                     <div className="input-box-container">
                         <textarea
                             className={isValid ? "input-box" : 'invalid-input-box'}
+                            id={'textArea'}
                             placeholder={translations.placeHolders.enterNumbersInput}
                             value={input}
                             onChange={handleInputChange}
                             data-testid="textAreaComponentTestId"
-                            onFocus={handleTextAreaFocus}
-                            onBlur={handleTextAreaBlur}
+                            onMouseEnter={handleTextAreaEnter}
+                            onMouseLeave={handleTextAreaLeave}
                             ref={textAreaRef}
                         />
                         <button className="button" onClick={handleCalculate} data-testid="calculateButtonComponentTestId" disabled={!isValid}>
