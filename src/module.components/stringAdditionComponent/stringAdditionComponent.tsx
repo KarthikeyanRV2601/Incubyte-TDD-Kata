@@ -1,7 +1,9 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useRef } from "react";
 import { add } from "../../module.utils";
 import { root } from "../../module.resources/translations/stringAdditionComponentTranslations";
 import { InputRulesComponent } from "./inputRules";
+import { Point } from "../../module.models";
+import { FloatingToolbarComponent } from "./floatingToolbarComponent";
 
 const { translations } = root;
 
@@ -10,6 +12,8 @@ export const StringAdditionComponent: React.FC = () => {
     const [isValid, setIsValid] = useState<boolean>(true);
     const [additionResult, setAdditionResult] = useState<number>();
     const [showResult, setShowResult] = useState<boolean>();
+    const [toolbarPosition, setToolbarPosition] = useState<Point>({ x: 0, y: 0 });
+    const toolbarRef = useRef<HTMLDivElement | null>(null);
 
     const handleInputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>): void => {
         const newValue = event.target.value;
@@ -27,6 +31,15 @@ export const StringAdditionComponent: React.FC = () => {
         }
     }, [isValid, setShowResult]);
 
+    const handleTextAreaFocus = useCallback((event: React.FocusEvent<HTMLTextAreaElement>) => {
+        const { clientX, clientY } = event.nativeEvent as any;
+        setToolbarPosition({ x: clientX + 10, y: clientY + 10 }); // Position toolbar near cursor
+    }, []);
+
+    const handleToolBarInsertCharacter = useCallback((char: string) => {
+        setInput((prevInput) => `${prevInput}${char}`);
+    }, []);
+
     return (
         <div className="string-calculator-component-class">
             <h1 data-testid="headerComponentTestId">{translations.titles.StringCalculatorAddition}</h1>
@@ -41,6 +54,7 @@ export const StringAdditionComponent: React.FC = () => {
                 {translations.buttons.calculate}
             </button>
             {showResult && <div className="result" id="resultComponentId" data-testid="resultComponentTestId">{translations.labels.result}: {additionResult}</div>}
+            <FloatingToolbarComponent toolbarRef={toolbarRef} toolbarPosition={toolbarPosition} handleToolBarInsertCharacter={handleToolBarInsertCharacter} />
             <InputRulesComponent translations={translations} />
         </div>
     );

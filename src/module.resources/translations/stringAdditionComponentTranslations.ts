@@ -16,6 +16,7 @@ export const root = {
         messages: {
             inputRules: [
                 'Separate multiple numbers with commas (e.g., "1,2,3").',
+                'Numbers entered cannot be negative',
                 'Numbers can be entered line by line to process.',
                 'Provide custom delimitter by following the format "//[delimiter]\\n[numbers…]"'
             ]
