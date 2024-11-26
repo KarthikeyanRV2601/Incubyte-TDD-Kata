@@ -3,7 +3,7 @@ import { FloatingToolbarComponentProps } from "../../module.models"
 
 
 export const FloatingToolbarComponent = (props: FloatingToolbarComponentProps) => {
-    const { toolbarPosition, toolbarRef, handleToolBarInsertCharacter, customToolbarButtons, setCustomToolbarButtons } = props;
+    const { toolbarPosition, toolbarRef, handleToolBarInsertCharacter, customToolbarButtons, setCustomToolbarButtons, translations } = props;
     const [position, setPosition] = useState(toolbarPosition);
     const [isDragging, setIsDragging] = useState(false);
     const dragOffset = useRef({ x: 0, y: 0 });
@@ -113,7 +113,7 @@ export const FloatingToolbarComponent = (props: FloatingToolbarComponentProps) =
                         onChange={handleCustomButtonInputChange}
                         onKeyDown={handleKeyDown}
                         onBlur={handleCustomButtonEnter}
-                        placeholder="Enter character..."
+                        placeholder={translations.placeHolders.enterCharactersToolbar}
                         className='custom-character-input'
                     />
                     <button

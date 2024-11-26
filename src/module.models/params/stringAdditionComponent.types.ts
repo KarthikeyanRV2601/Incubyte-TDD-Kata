@@ -22,4 +22,5 @@ export interface FloatingToolbarComponentProps {
     handleToolBarInsertCharacter: (char: string) => void;
     customToolbarButtons: string[];
     setCustomToolbarButtons: React.Dispatch<React.SetStateAction<string[]>>;
+    translations:Translations;
 }

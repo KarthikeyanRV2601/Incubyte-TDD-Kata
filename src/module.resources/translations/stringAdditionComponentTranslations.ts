@@ -5,7 +5,8 @@ export const root = {
             inputRules: 'Input Rules:',
         },
         placeHolders: {
-            enterNumbersInput: 'Enter numbers (e.g., 1,2,3)'
+            enterNumbersInput: 'Enter numbers (e.g., 1,2,3)',
+            enterCharactersToolbar: 'Enter character(s)',
         },
         buttons: {
             calculate: 'Calculate'

@@ -99,6 +99,7 @@ export const StringAdditionComponent: React.FC = () => {
                     handleToolBarInsertCharacter={handleToolBarInsertCharacter}
                     setCustomToolbarButtons={setCustomToolbarButtons}
                     customToolbarButtons={customToolbarButtons}
+                    translations={translations}
                 />}
                 <InputRulesComponent translations={translations} />
             </div>
