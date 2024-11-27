@@ -45,7 +45,7 @@ export const StringAdditionComponent: React.FC = () => {
         const textAreaRect = GeomtericalUtils.getBoundingClientRect('textArea');
         if (textAreaRect) {
             setToolbarPosition({
-                x: textAreaRect.left + 10,
+                x: textAreaRect.left + 300,
                 y: textAreaRect.top - 40,
             });
             setToolbarVisible(true);
@@ -67,7 +67,7 @@ export const StringAdditionComponent: React.FC = () => {
 
     return (
         <div className="string-calculator-component-class">
-            <h1 data-testid="headerComponentTestId">{translations.titles.StringCalculatorAddition}</h1>
+            <h1 data-testid="headerComponentTestId" className="header-component">{translations.titles.StringCalculatorAddition}</h1>
             <div className="input-result-rules-container">
                 <div className="input-result-container">
                     <div className="input-box-container">

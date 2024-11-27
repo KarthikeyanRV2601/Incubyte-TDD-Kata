@@ -49,11 +49,18 @@ $animation-ease: ease-in-out;
 @mixin inputBoxBaseStyles {
     width: $input-box-width;
     min-height: $input-box-height;
+    max-height: $input-box-height;
     padding: 0 $input-padding 0 $input-padding;
     font-size: $font-size;
     border: 1px solid $input-border-color;
     border-radius: $border-radius;
     transition: border-color 0.3s ease;
+
+    @media (max-width: 768px) {
+        min-height: 300px;
+        max-height: 300px;
+    }
+
 }
 
 @mixin buttonBaseStyles {
@@ -85,6 +92,11 @@ $animation-ease: ease-in-out;
     align-items: center;
     margin: 20px;
     font-family: $font-family;
+
+    .header-component {
+        margin-bottom: 100px;
+        text-align: center;
+    }
 
     .input-box {
         @include inputBoxBaseStyles();
@@ -138,6 +150,10 @@ $animation-ease: ease-in-out;
             margin-bottom: 5px;
         }
 
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
         // Input Rules Content
         .input-rules-content {
             padding: 15px;
@@ -173,6 +189,11 @@ $animation-ease: ease-in-out;
         &:hover {
             background-color: #0056b3;
         }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 10px;
+        }
     }
 
     .input-result-rules-container {
@@ -180,12 +201,21 @@ $animation-ease: ease-in-out;
         @include flexRow();
         align-items: flex-start;
         gap: 20px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .input-result-container {
         height: 600px;
         @include flexColumn();
         justify-content: flex-start;
+
+        @media (max-width: 768px) {
+            width: 200px;
+        }
     }
 
     .input-box-container {
@@ -193,6 +223,12 @@ $animation-ease: ease-in-out;
         @include flexColumn();
         justify-content: flex-start;
         gap: 20px;
+
+        @media (max-width: 768px) {
+            width: 200px;
+            padding: 0 10px;
+            height: fit-content;
+        }
     }
 
     .result-card {
@@ -213,6 +249,10 @@ $animation-ease: ease-in-out;
             font-size: $font-size-large;
             color: $primary-color;
             font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            width: 90%;
         }
     }
 
@@ -266,6 +306,30 @@ $animation-ease: ease-in-out;
                 background: white;
                 color: $text-color;
             }
+        }
+    }
+}
+
+// Global Media Queries
+@media (max-width: 768px) {
+    #{$component-class} {
+        .input-box {
+            width: 80vw;
+            min-height: 200px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #{$component-class} {
+        .input-box {
+            font-size: $font-size-small;
+            padding: calc($input-padding / 2);
+        }
+
+        .button {
+            font-size: $font-size-small;
+            padding: calc($button-padding-y / 2) calc($button-padding-x / 2);
         }
     }
 }
