@@ -313,7 +313,7 @@ $animation-ease: ease-in-out;
 // Global Media Queries
 @media (max-width: 768px) {
     #{$component-class} {
-        .input-box {
+        .input-box, .invalid-input-box {
             width: 80vw;
             min-height: 200px;
         }
@@ -322,9 +322,10 @@ $animation-ease: ease-in-out;
 
 @media (max-width: 480px) {
     #{$component-class} {
-        .input-box {
+        .input-box, .invalid-input-box {
             font-size: $font-size-small;
             padding: calc($input-padding / 2);
+            width: 80vw;
         }
 
         .button {
