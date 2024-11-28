@@ -245,15 +245,16 @@
 }
 
 @media (max-width: 768px) {
-  .string-calculator-component-class .input-box {
+  .string-calculator-component-class .input-box, .string-calculator-component-class .invalid-input-box {
     width: 80vw;
     min-height: 200px;
   }
 }
 @media (max-width: 480px) {
-  .string-calculator-component-class .input-box {
+  .string-calculator-component-class .input-box, .string-calculator-component-class .invalid-input-box {
     font-size: 14px;
     padding: 5px;
+    width: 80vw;
   }
   .string-calculator-component-class .button {
     font-size: 14px;
