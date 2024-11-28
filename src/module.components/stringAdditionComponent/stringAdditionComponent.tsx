@@ -45,7 +45,7 @@ export const StringAdditionComponent: React.FC = () => {
         const textAreaRect = GeomtericalUtils.getBoundingClientRect('textArea');
         if (textAreaRect) {
             setToolbarPosition({
-                x: textAreaRect.left + 300,
+                x: textAreaRect.left + 100,
                 y: textAreaRect.top - 40,
             });
             setToolbarVisible(true);
